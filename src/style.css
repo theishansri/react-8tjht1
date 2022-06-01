@@ -1,0 +1,41 @@
+h1,
+p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container {
+  padding: 20px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+.prod-card {
+  border: 1px solid black;
+  flex: 0 0 28%;
+  margin: 30px;
+  width: 100%;
+}
+.prod-content {
+  padding: 30px;
+  font-size: 15px;
+  max-width: 100%;
+}
+.prod-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.prod-details {
+  display: flex;
+  flex-direction: row;
+}
+.prod-image {
+  height: 80px;
+}
+.prod-image-parent {
+  margin-top: 10px;
+  width: 25%;
+  margin-right: 20px;
+}
