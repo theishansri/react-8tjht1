@@ -1,18 +1,16 @@
-import React from 'react';
+import React from "react";
 
 export default class ProductDescription extends React.Component {
   state = {
     displayDetails: {},
   };
   onClickHandler = (product) => {
-    console.log(product);
     this.setState((prevState) => ({
       displayDetails: {
         ...prevState.displayDetails,
         [product.id]: true,
       },
     }));
-    console.log(this.state.displayDetails);
   };
   render() {
     const { products } = this.props;
@@ -22,16 +20,17 @@ export default class ProductDescription extends React.Component {
         <div className="row">
           {products.map((product) => {
             return (
-              <div className="prod-card" key={product.id}>
-                <div className="prod-content">
+              <div data-testid="card" className="prod-card" key={product.id}>
+                <div className="prod-content" data-testid="card-content">
                   <div
                     className="prod-title"
+                    data-testid="card-title"
                     onClick={() => this.onClickHandler(product)}
                   >
                     {product.title}
                   </div>
                   <div className="prod-desc">
-                    {product.description.slice(0, 50) + '...'}
+                    {product.description.slice(0, 50) + "..."}
                   </div>
                   {this.state.displayDetails[product.id] && (
                     <span className="prod-details">
@@ -43,7 +42,10 @@ export default class ProductDescription extends React.Component {
                         />
                       </span>
                       <span className="prod-details-desc">
-                        <div className="prod-details-description">
+                        <div
+                          className="prod-details-description"
+                          data-testid="prod-full-description"
+                        >
                           {product.description}
                         </div>
                       </span>
